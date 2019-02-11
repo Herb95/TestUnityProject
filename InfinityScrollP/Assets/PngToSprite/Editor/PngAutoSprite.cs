@@ -2,63 +2,12 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-public class PngAutoSprite : AssetPostprocessor
+
+public class PngAutoSprite
 {
-    //void OnPreprocessTexture()
-    //{
-    //    /*
-    //    //自动设置类型; 
-    //    string dirName =Path.GetDirectoryName(assetPath);
-    //    Debug.Log("Import --- " + dirName);
-    //    string fullPath = "Assets/Icon/icon" + "/";
-    //    if (dirName == fullPath)
-    //    {
-
-    //        TextureImporter textureImporter = (TextureImporter)assetImporter;
-    //        textureImporter.textureType = TextureImporterType.Sprite;
-
-    //        /*
-    //        string folderStr = Path.GetFileName(dirName);
-    //        Debug.Log("Set Packing Tag --- " + folderStr);
-    //        textureImporter.spritePackingTag = folderStr;
-    //        */
-    //    //}
-    //}
-    /*
-    private void OnPreprocessTexture()
+    public void OnPreprocessTexture(string path)
     {
-        if (assetPath.ToLower().IndexOf("Assets/Icon/", StringComparison.InvariantCultureIgnoreCase) != -1)
-        {
-            TextureImporter textureImporter = (TextureImporter)assetImporter;
-            textureImporter.textureType = TextureImporterType.Sprite;
-            textureImporter.spriteImportMode = SpriteImportMode.Single;
-            textureImporter.alphaIsTransparency = true;
-            textureImporter.mipmapEnabled = false;
-        }
-    }
-    */
-}
-
-
-public class PngToSpriteTools : AssetPostprocessor
-{
-
-    [MenuItem("Assets/图片处理/Png转Sprite")]
-    public static void PngToSprite()
-    {
-        UnityEngine.Object[] arr = Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.TopLevel);
-        string path = Application.dataPath.Substring(0, Application.dataPath.LastIndexOf('/')) + "/" + AssetDatabase.GetAssetPath(arr[0]);
-        Debug.Log(path);
-        // OnPreprocessTexture();
-    }
-
-    public void OnPreprocessTexture()
-    {
-        TextureImporter textureImporter = (TextureImporter)assetImporter;
-        textureImporter.textureType = TextureImporterType.Sprite;
-        //textureImporter.spriteImportMode = SpriteImportMode.Single;
-        textureImporter.alphaIsTransparency = true;
-        textureImporter.mipmapEnabled = false;
+        LoopSetTexture();
     }
 
     /// <summary>
@@ -76,6 +25,7 @@ public class PngToSpriteTools : AssetPostprocessor
             texImporter.SetTextureSettings(tis);
             AssetDatabase.ImportAsset(path);
         }
+        AssetDatabase.Refresh();
     }
 
     /// <summary>
@@ -90,7 +40,26 @@ public class PngToSpriteTools : AssetPostprocessor
     public TextureImporter GetTextureSettings(string path)
     {
         TextureImporter textureImporter = AssetImporter.GetAtPath(path) as TextureImporter;
-        textureImporter.anisoLevel = 1;
-        return textureImporter;
+        if (textureImporter != null)
+        {
+            textureImporter.anisoLevel = 1;
+            textureImporter.textureType = TextureImporterType.Sprite;
+            textureImporter.alphaIsTransparency = true;
+            textureImporter.mipmapEnabled = false;
+            return textureImporter;
+        }
+        return null;
+    }
+}
+
+public class PngToSpriteTools : Editor
+{
+    [MenuItem("Assets/Png转Sprite")]
+    public static void PngToSprite()
+    {
+        UnityEngine.Object[] arr = Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.TopLevel);
+        string path = Application.dataPath.Substring(0, Application.dataPath.LastIndexOf('/')) + "/" + AssetDatabase.GetAssetPath(arr[0]);
+        PngAutoSprite p = new PngAutoSprite();
+        p.OnPreprocessTexture(path);
     }
 }

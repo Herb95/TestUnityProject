@@ -59,10 +59,10 @@ namespace LianJian
         [@MenuItem("DuanMenu/Texture Import Settings")]
         private static void Init()
         {
-            //TextureImportSetting window =
-            //    (TextureImportSetting)EditorWindow.GetWindow(typeof(TextureImportSetting), true,
-            //        "TextureImportSetting");
-            //window.Show();
+            TextureImportSetting window =
+                (TextureImportSetting)EditorWindow.GetWindow(typeof(TextureImportSetting), true,
+                    "TextureImportSetting");
+            window.Show();
         }
 
         /// <summary>
