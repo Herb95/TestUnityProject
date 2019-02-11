@@ -19,7 +19,7 @@ namespace LianJian
         /// <summary>
         /// 临时存储int[]
         /// </summary>
-        private int[] IntArray = new int[] { 0, 1, 2, 3, 4, 5, 6, 7 };
+        private int[] IntArray = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
 
         //AnisoLevel
         private int AnisoLevel = 1;
@@ -41,17 +41,12 @@ namespace LianJian
         private int MaxSizeInt = 5;
 
 
-        private string[] TextureTypeString = new string[]
-            {"Texture", "Normal Map", "GUI", "Refelection", "Cookie", "Lightmap", "Advanced"};
+        private string[] TextureTypeString = new string[] { "Default", "Normal Map", "Editor GUI", "Sprite", "Cursor", "Cookie", "Lightmap", "Single Channel" };
 
         //Max Size
 
-        private string[] MaxSizeString = new string[] { "32", "64", "128", "256", "512", "1024", "2048", "4096" };
+        private string[] MaxSizeString = new string[] { "32", "64", "128", "256", "512", "1024", "2048", "4096", "8192" };
 
-        //Format
-        private int FormatInt = 0;
-
-        private string[] FormatString = new string[] { "Compressed", "16 bits", "true color" };
 
         /// <summary>
         /// 创建、显示窗体
@@ -72,19 +67,17 @@ namespace LianJian
         {
             //AnisoLevel
             GUILayout.BeginHorizontal();
-            GUILayout.Label("Aniso Level  ");
-            AnisoLevel = EditorGUILayout.IntSlider(AnisoLevel, 0, 9);
             GUILayout.EndHorizontal();
+            //Texture Type
+            TextureTypeInt = EditorGUILayout.IntPopup("Texture Type", TextureTypeInt, TextureTypeString, IntArray);
             //Filter Mode
             FilterModeInt = EditorGUILayout.IntPopup("Filter Mode", FilterModeInt, FilterModeString, IntArray);
             //Wrap Mode
             WrapModeInt = EditorGUILayout.IntPopup("Wrap Mode", WrapModeInt, WrapModeString, IntArray);
-            //Texture Type
-            TextureTypeInt = EditorGUILayout.IntPopup("Texture Type", TextureTypeInt, TextureTypeString, IntArray);
+            GUILayout.Label("Aniso Level  ");
+            AnisoLevel = EditorGUILayout.IntSlider(AnisoLevel, 0, 9);
             //Max Size
-            MaxSizeInt = EditorGUILayout.IntPopup("Max Size", MaxSizeInt, MaxSizeString, IntArray);
-            //Format
-            FormatInt = EditorGUILayout.IntPopup("Format", FormatInt, FormatString, IntArray);
+            MaxSizeInt = EditorGUILayout.IntPopup("Max Size", MaxSizeInt, MaxSizeString,IntArray);
             if (GUILayout.Button("Set Texture ImportSettings"))
                 LoopSetTexture();
         }
@@ -119,6 +112,12 @@ namespace LianJian
                 case 1:
                     textureImporter.wrapMode = TextureWrapMode.Clamp;
                     break;
+                case 2:
+                    textureImporter.wrapMode = TextureWrapMode.Mirror;
+                    break;
+                case 3:
+                    textureImporter.wrapMode = TextureWrapMode.MirrorOnce;
+                    break;
             }
             //Texture Type
             switch (TextureTypeInt)
@@ -133,16 +132,19 @@ namespace LianJian
                     textureImporter.textureType = TextureImporterType.GUI;
                     break;
                 case 3:
-                    textureImporter.textureType = TextureImporterType.Reflection;
+                    textureImporter.textureType = TextureImporterType.Sprite;
                     break;
                 case 4:
-                    textureImporter.textureType = TextureImporterType.Cookie;
+                    textureImporter.textureType = TextureImporterType.Cursor;
                     break;
                 case 5:
-                    textureImporter.textureType = TextureImporterType.Lightmap;
+                    textureImporter.textureType = TextureImporterType.Cookie;
                     break;
                 case 6:
-                    textureImporter.textureType = TextureImporterType.Default;
+                    textureImporter.textureType = TextureImporterType.Lightmap;
+                    break;
+                case 7:
+                    textureImporter.textureType = TextureImporterType.SingleChannel;
                     break;
             }
             //Max Size 
@@ -172,20 +174,11 @@ namespace LianJian
                 case 7:
                     textureImporter.maxTextureSize = 4096;
                     break;
-            }
-            //Format
-            switch (FormatInt)
-            {
-                case 0:
-                    textureImporter.textureFormat = TextureImporterFormat.AutomaticCompressed;
-                    break;
-                case 1:
-                    textureImporter.textureFormat = TextureImporterFormat.Automatic16bit;
-                    break;
-                case 2:
-                    textureImporter.textureFormat = TextureImporterFormat.AutomaticTruecolor;
+                case 8:
+                    textureImporter.maxTextureSize = 8192;
                     break;
             }
+            Debug.Log(textureImporter.maxTextureSize);
             return textureImporter;
         }
 
