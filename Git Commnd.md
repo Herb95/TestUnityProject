@@ -1,4 +1,4 @@
-# Git 安装GitLess 简单命令
+# vscode 安装GitLess 简单命令
 
 ``` 基础命令
     gl init - 创建一个空仓库或从现有的远程仓库创建一个
