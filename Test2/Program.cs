@@ -41,7 +41,7 @@ namespace Test2 {
             string value = Console.ReadLine ();
             Match ma = reg.Match (value);
             int inputCount = 0;
-            bool isFlage = string.IsNullOrEmpty (value) || !ma.Success;
+            bool isFlage = !string.IsNullOrEmpty (value) || !ma.Success;
             while (string.IsNullOrEmpty (value) || !ma.Success) {
                 inputCount++;
                 if (inputCount > 5)
