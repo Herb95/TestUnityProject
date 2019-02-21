@@ -16,17 +16,21 @@ namespace Assets.Utils
 {
     public class TiemrTextManager : MonoBehaviour
     {
-        private string dt;
+        public int TimeId;
 
-        private void Start()
+        private void OnEnable()
         {
             GetTime();
         }
 
         public void GetTime()
         {
-            TimeUtil.GetLoclTimer(out dt);
-            Debug.Log("时间: " + dt);
+
+            TimeId = TimeUtils.Time.AddTimer(1, () =>
+            {
+                Debug.Log("时间--");
+            });
+            Debug.Log(TimeId);
         }
     }
 }
