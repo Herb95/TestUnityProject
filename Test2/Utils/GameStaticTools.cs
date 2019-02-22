@@ -91,6 +91,21 @@ namespace Utils {
             return sb.ToString ();
         }
 
+        /// <summary>
+        /// 竖排显示字体
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string FormatStr(string str)
+        {
+            string result = string.Empty;
+            for (int i = 0; i < str.Length; i++)
+            {
+                result += str[i] + "\n";
+            }
+            return result;
+        }
+
     }
     class ByteArray {
         private byte[] m_data = null;

@@ -36,31 +36,31 @@ namespace Test2 {
             Console.ReadLine ();
             */
             // System.Console.WriteLine(ProgramEnum.EC.ERROR_COMMON_SUCCESS.ToString());
-            System.Console.Write ("请输入数值:");
-            Regex reg = new Regex ("^[0-9]+$");
-            string value = Console.ReadLine ();
-            Match ma = reg.Match (value);
-            int inputCount = 0;
-            bool isFlage = !string.IsNullOrEmpty (value) || !ma.Success;
-            while (string.IsNullOrEmpty (value) || !ma.Success) {
-                inputCount++;
-                if (inputCount > 5)
-                    break;
-                System.Console.Write ("请重新输入:");
-                value = Console.ReadLine ();
-                ma = reg.Match (value);
-
-                if (!(string.IsNullOrEmpty (value)) && ma.Success) {
-                    isFlage = true;
-                    break;
-                }
-            }
-            if (isFlage) {
-                string result = GameUtils.ParseCnToInt ((int) Convert.ToInt64 (value));
-                System.Console.WriteLine ("转换后: " + result);
-            } else {
-                System.Console.WriteLine ("输入错误,请重新运行!!!");
-            }
+            // System.Console.Write ("请输入数值:");
+            // Regex reg = new Regex ("^[0-9]+$");
+            // string value = Console.ReadLine ();
+            // Match ma = reg.Match (value);
+            // int inputCount = 0;
+            // bool isFlage = !string.IsNullOrEmpty (value) || !ma.Success;
+            // while (string.IsNullOrEmpty (value) || !ma.Success) {
+            //     inputCount++;
+            //     if (inputCount > 5)
+            //         break;
+            //     System.Console.Write ("请重新输入:");
+            //     value = Console.ReadLine ();
+            //     ma = reg.Match (value);
+            //     if (!(string.IsNullOrEmpty (value)) && ma.Success) {
+            //         isFlage = true;
+            //         break;
+            //     }
+            // }
+            // if (isFlage) {
+            //     string result = GameUtils.ParseCnToInt ((int) Convert.ToInt64 (value));
+            //     System.Console.WriteLine ("转换后: " + result);
+            // } else {
+            //     System.Console.WriteLine ("输入错误,请重新运行!!!");
+            // }
+            System.Console.WriteLine (GameStaticTools.FormatStr("第一章节"));
         }
     }
 
