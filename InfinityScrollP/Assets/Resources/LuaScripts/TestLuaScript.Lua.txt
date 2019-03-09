@@ -1,0 +1,31 @@
+﻿--[[
+/*
+*
+*         Title: TestLuaScript : PathTestProject
+*                主题: ***
+*
+*         Description:
+*                功能：***
+*
+*         CreateTime:      
+*         Author:         Herbie
+*         Version:        0.1版本
+*         Modify Recoder: 
+*
+*/
+--]]
+--local  cubObjCpnt = nil
+
+function start()
+	print("TestLuaScript is start")
+	--print("injected onject",cubObj);
+	--cubObjCpnt = cubObj:GetComponent(typeof(CS.UnityEngine.MeshRenderer));
+end
+
+function update()
+	print("CS Update")
+end
+
+function ondestroy()
+	print("lua destroy")
+end

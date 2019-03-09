@@ -1,0 +1,143 @@
+<GlobalConfig CodeFontSize = "16"/>
+<BreakpointList>
+  <Breakpoint State = "BreakpointActive" Filename = "Resources/LuaScripts/TestLuaScript.Lua.txt" LineIndex = "19"/>
+</BreakpointList>
+<WatchList/>
+<ProjectUI>
+  <TreeState BaseX = "0" BaseY = "0" AlternativeItem = "LuaFolders#Assets#XLua#Examples#07_AsyncTest">
+    <SelectedList>
+      <Selected Path = "LuaFolders#Assets#XLua#Examples#06_Coroutine#Resources#cs_coroutine.lua.txt"/>
+    </SelectedList>
+    <ExpandedList>
+      <Expanded Path = "LuaFolders"/>
+      <Expanded Path = "LuaFolders#Assets"/>
+      <Expanded Path = "LuaFolders#Assets#Resources"/>
+      <Expanded Path = "LuaFolders#Assets#Resources#LuaScripts"/>
+      <Expanded Path = "LuaFolders#Assets#XLua"/>
+      <Expanded Path = "LuaFolders#Assets#XLua#Examples"/>
+      <Expanded Path = "LuaFolders#Assets#XLua#Examples#02_U3DScripting"/>
+      <Expanded Path = "LuaFolders#Assets#XLua#Examples#03_UIEvent"/>
+      <Expanded Path = "LuaFolders#Assets#XLua#Examples#06_Coroutine"/>
+      <Expanded Path = "LuaFolders#Assets#XLua#Examples#06_Coroutine#Resources"/>
+    </ExpandedList>
+  </TreeState>
+</ProjectUI>
+<FindAnReplaceUI
+  Pattern = ""
+  MatchCase = "false"
+  MatchWholeWord = "false"
+  Target = ""
+  Replace = ""/>
+<MainWindow
+  X = "350"
+  Y = "115"
+  Width = "1389"
+  Height = "839"
+  Maximized = "true"
+  LastCodeFilename = "G:/TestProject/GitHubProject/TestUnityProject/InfinityScrollP/Assets/XLua/Examples/06_Coroutine/Resources/cs_coroutine.lua.txt">
+  <DockingControl>
+    <DockingNode DockingDirection = "Horizontal">
+      <DockingNode DockingDirection = "None">
+        <DockingBlock Width = "431" Height = "923" DocumentStyle = "false">
+          <DockingCard
+            Text = "Project"
+            Tag = ""
+            ActivePage = "true"
+            ActivateTime = "0"/>
+          <DockingCard
+            Text = "Outline"
+            Tag = ""
+            ActivePage = "false"
+            ActivateTime = "0"/>
+        </DockingBlock>
+      </DockingNode>
+      <DockingNode DockingDirection = "Vertical">
+        <DockingNode DockingDirection = "Horizontal">
+          <DockingNode DockingDirection = "None">
+            <DockingBlock Width = "556" Height = "719" DocumentStyle = "true">
+              <DockingCard
+                Text = "TestLuaScript.Lua.txt"
+                Tag = "G:/TestProject/GitHubProject/TestUnityProject/InfinityScrollP/Assets/Resources/LuaScripts/TestLuaScript.Lua.txt"
+                ActivePage = "true"
+                ActivateTime = "155274057"
+                CaretLineIndex = "14"
+                CaretCodeCharIndex = "2"
+                BaseX = "0"
+                BaseY = "0"/>
+            </DockingBlock>
+          </DockingNode>
+          <DockingNode DockingDirection = "None">
+            <DockingBlock Width = "908" Height = "719" DocumentStyle = "true">
+              <DockingCard
+                Text = "ButtonInteraction.lua.txt"
+                Tag = "G:/TestProject/GitHubProject/TestUnityProject/InfinityScrollP/Assets/XLua/Examples/03_UIEvent/ButtonInteraction.lua.txt"
+                ActivePage = "false"
+                ActivateTime = "155300492"
+                CaretLineIndex = "10"
+                CaretCodeCharIndex = "54"
+                BaseX = "0"
+                BaseY = "0"/>
+              <DockingCard
+                Text = "coruntine_test.lua.txt"
+                Tag = "G:/TestProject/GitHubProject/TestUnityProject/InfinityScrollP/Assets/XLua/Examples/06_Coroutine/Resources/coruntine_test.lua.txt"
+                ActivePage = "false"
+                ActivateTime = "155429547"
+                CaretLineIndex = "6"
+                CaretCodeCharIndex = "43"
+                BaseX = "0"
+                BaseY = "0"/>
+              <DockingCard
+                Text = "cs_coroutine.lua.txt"
+                Tag = "G:/TestProject/GitHubProject/TestUnityProject/InfinityScrollP/Assets/XLua/Examples/06_Coroutine/Resources/cs_coroutine.lua.txt"
+                ActivePage = "true"
+                ActivateTime = "162069818"
+                CaretLineIndex = "8"
+                CaretCodeCharIndex = "62"
+                BaseX = "0"
+                BaseY = "0"/>
+            </DockingBlock>
+          </DockingNode>
+        </DockingNode>
+        <DockingNode DockingDirection = "None">
+          <DockingBlock Width = "1470" Height = "197" DocumentStyle = "false">
+            <DockingCard
+              Text = "Output"
+              Tag = ""
+              ActivePage = "true"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Call Stack"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Locals"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Globals"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Watches"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Autos"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+            <DockingCard
+              Text = "Breakpoints"
+              Tag = ""
+              ActivePage = "false"
+              ActivateTime = "0"/>
+          </DockingBlock>
+        </DockingNode>
+      </DockingNode>
+    </DockingNode>
+  </DockingControl>
+</MainWindow>
