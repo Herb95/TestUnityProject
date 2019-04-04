@@ -98,10 +98,10 @@ namespace Assets.SystemScripts
 
             if (num < 1000000)
             {
-                return ((double) num * 0.001).ToString("f1" + "k");
+                return ((double)num * 0.001).ToString("f1" + "k");
             }
 
-            return ((double) num * 1E-06).ToString("f1" + "k");
+            return ((double)num * 1E-06).ToString("f1" + "k");
         }
 
         public void UpdateFrameTime()
@@ -116,9 +116,9 @@ namespace Assets.SystemScripts
             bool flag2 = _frameCounter > 30 || _clientTimeAccumulator > 0.3f || _renderTimeAccumulator > 0.3f;
             if (flag || flag2)
             {
-                _clientTimeAccumulator = _clientTimeAccumulator / (float) _frameCounter;
-                _renderTimeAccumulator = _renderTimeAccumulator / (float) _frameCounter;
-                _maxTimeAccumulator = _maxTimeAccumulator / (float) _frameCounter;
+                _clientTimeAccumulator = _clientTimeAccumulator / (float)_frameCounter;
+                _renderTimeAccumulator = _renderTimeAccumulator / (float)_frameCounter;
+                _maxTimeAccumulator = _maxTimeAccumulator / (float)_frameCounter;
             }
 
             if (flag2)
